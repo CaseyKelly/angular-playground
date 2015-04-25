@@ -7,7 +7,7 @@
       Name: <input type="text" ng-model="name" />
       <h3>Looping through the members of Phish with the ng-repeat directive</h3>
       <ul>
-        <li ng-repeat="member in bandmembers | filter: name">{{ member.name }} - {{ member.instrument }}</li>
+        <li ng-repeat="member in bandmembers | filter: name | orderBy: 'instrument'">{{ member.name }} - {{ member.instrument }}</li>
       </ul>
     </div>
     <script src="bower_components/angular/angular.min.js"></script>
