@@ -1,9 +1,9 @@
-<html ng-app>
+<html ng-app='phishApp'>
   <head>
     <title>Angular JS Tutorial</title>
   </head>
   <body>
-    <div class="container" ng-init="bandmembers=[{name: 'Trey', instrument: 'Guitar'}, {name: 'Page', instrument: 'Piano'}, {name: 'Mike', instrument: 'Bass'}, {name: 'Fishman', instrument: 'Drums'}]">
+    <div ng-controller="SimpleController">
       Name: <input type="text" ng-model="name" />
       <h3>Looping through the members of Phish with the ng-repeat directive</h3>
       <ul>
@@ -11,5 +11,17 @@
       </ul>
     </div>
     <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+      var phishApp = angular.module('phishApp', []);
+        function SimpleController($scope) {
+          $scope.bandmembers = [
+            {name: 'Trey', instrument: 'Guitar'},
+            {name: 'Page', instrument: 'Piano'},
+            {name: 'Mike', instrument: 'Bass'},
+            {name: 'Fishman', instrument: 'Drums'}
+          ];
+        }
+        phishApp.controller('SimpleController', SimpleController);
+    </script>
   </body>
 </html>
